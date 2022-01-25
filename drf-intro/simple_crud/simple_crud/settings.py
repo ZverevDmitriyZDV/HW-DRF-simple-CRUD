@@ -81,8 +81,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_simple_crud',
+        'USER': 'netology_simple_crud',
+        'PASSWORD': 'netology_simple_crud',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '5432'
+
     }
 }
 
