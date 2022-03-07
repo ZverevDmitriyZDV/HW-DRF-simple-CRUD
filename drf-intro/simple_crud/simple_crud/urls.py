@@ -17,9 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 
 # TODO: настройте роутер и подключите `ProjectViewSet` и `MeasurementViewSet`
+from rest_framework.routers import DefaultRouter
 
+from measurements.views import ProjectViewSet, MeasurementViewSet
+
+router = DefaultRouter()
+router.register("project", ProjectViewSet, basename="project")
+router.register("measurements", MeasurementViewSet, basename="measurements")
 
 urlpatterns = [
-    path('', include('measurements.urls'))
+    path('admin/', admin.site.urls),
+    path("data/", include(router.urls)),
 ]
 
